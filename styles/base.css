@@ -9,6 +9,7 @@ p {
 
 li {
   list-style: none;
+  padding: 10px;
 }
 
 a {
@@ -19,11 +20,6 @@ header {
   display: flex;
   flex-direction: column;
   border: 1px black solid;
-}
-
-li {
-  padding: 10px;
-  display: none;
 }
 
 .main-nav:hover ul {
