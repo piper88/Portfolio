@@ -1,3 +1,9 @@
+$('.icon-menu').on('click', function() {
+  // console.log($('.main-nav ul').attr());
+  $('.main-nav ul').show();
+});
+
+
 var projects = [];
 
 function Project (opts) {
