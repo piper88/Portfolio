@@ -1,22 +1,23 @@
-var hobbies = [];
+var projects = [];
 
-function Hobby (opts) {
+function Project (opts) {
   this.title = opts.title;
   this.body = opts.body;
 }
 
-Hobby.prototype.toHtml = function() {
-  var $newHobby = $('article.template').clone();
-  $newHobby.find('h2').html(this.title);
-  $newHobby.find('.hobbies-body').html(this.body);
-  $newHobby.removeClass('template');
-  return $newHobby;
+Project.prototype.toHtml = function() {
+  var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  $newProject.find('h2').html(this.title);
+  $newProject.find('.projects-body').html(this.body);
+  $newProject.removeClass('template');
+  return $newProject;
 };
 
 myData.forEach(function(ele) {
-  hobbies.push(new Hobby(ele));
+  projects.push(new Project(ele));
 });
 
-hobbies.forEach(function(hobby) {
-  $('#hobbies').append(hobby.toHtml());
+projects.forEach(function(project) {
+  $('#projects').append(project.toHtml());
 });

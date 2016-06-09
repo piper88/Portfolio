@@ -1,7 +1,14 @@
 header {
   display: flex;
   flex-direction: column;
-  border: 1px black solid;
-  margin: 5px;
-  border-radius: 5px;
+}
+
+.projects-body {
+  max-width: 60%;
+  margin: auto;
+}
+
+#header-break {
+  max-width: 85%;
+  border-color: #ff0080;
 }
