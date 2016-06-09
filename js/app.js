@@ -1,8 +1,3 @@
-$('.icon-menu').on('click', function() {
-  // console.log($('.main-nav ul').attr());
-  $('.main-nav ul').show();
-});
-
 
 var projects = [];
 
@@ -26,4 +21,8 @@ myData.forEach(function(ele) {
 
 projects.forEach(function(project) {
   $('#projects').append(project.toHtml());
+});
+
+$('.icon-menu').click(function() {
+  $('.main-nav ul').toggle();
 });
