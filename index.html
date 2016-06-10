@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script id="project-template" type="text/x-handlebars-template">
+      <article class="template">
+        <h2>{{title}}</h2>
+        <section class="projects-body">{{{body}}}
+        <a href="#" class="read-on">More &rarr;</a>
+        <hr></hr>
+        </section>
+      </article>
+    </script>
   </head>
   <body>
     <header>
@@ -17,22 +25,28 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li class="tab" data-content="projects"><a href="#">Home</a></li>
+            <li class="tab" data-content="about"><a href="#">About Me</a></li>
             <li class="icon-github"><a href="https://github.com/prungy88">Github</a></li>
             <li class="icon-facebook"><a href="https://www.facebook.com/sarah.debey.9">Facebook</a></li>
           </ul>
       </nav>
     </header>
+    <hr id="header-break"></hr>
       <main>
-        <section id="hobbies">
-          <h1>My Hobbies</h1>
-          <article class="template">
-            <h2></h2>
-            <section class="hobbies-body"></section>
-          </article>
+        <section id="projects" class="content-to-toggle">
         </section>
+
+        <section id="about" class="content-to-toggle">
+          <h1>About Me</h1>
+          <p>This is the part where I tell you about myself.</p>
+        </section>
+
     </main>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="js/mydata.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/view.js"></script>
   </body>
 </html>
