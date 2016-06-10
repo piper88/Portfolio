@@ -9,7 +9,7 @@ projectView.handleNav = function() {
 };
 
 projectView.handleTeasers = function() {
-  $('projects-body *:nth-of-type(n+1)').hide();
+  $('.projects-body *:nth-of-type(n+2)').hide();
   $('#projects').on('click', 'a.read-on', function(e) {
     e.preventDefault();
     $(this).parent().find('*').show();
