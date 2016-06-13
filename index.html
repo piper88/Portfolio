@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT' rel='stylesheet' type='text/css'>
     <script id="project-template" type="text/x-handlebars-template">
-      <article class="template">
+      <article class="clearfix" data-title="">
         <h2>{{title}}</h2>
         <section class="projects-body">{{{body}}}
         <a href="#" class="read-on">More &rarr;</a>
+        <a href="#" class="show-less">Less &larr;</a>
         <hr></hr>
         </section>
       </article>
     </script>
+
   </head>
   <body>
     <header>
-      <h1>Sarah DeBey's Portfolio</h1>
+      <h1>Sarah DeBey</h1>
       <nav class="main-nav">
         <div class="icon-menu"></div>
           <ul>
@@ -32,9 +35,18 @@
           </ul>
       </nav>
     </header>
-    <hr id="header-break"></hr>
       <main>
+
         <section id="projects" class="content-to-toggle">
+          <div>
+            <ul id="filter">
+              <li>
+                <select id="project-filter">
+                  <option value=""> -- Filter by Project Name -- </option>
+                </select>
+              </li>
+            </ul>
+          </div>
         </section>
 
         <section id="about" class="content-to-toggle">

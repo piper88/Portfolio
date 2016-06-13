@@ -1,41 +1,60 @@
 body {
-  background-color: rgb(168, 168, 168);
+  background-color: #EFEFEF;
 }
 
 h1 {
   text-align: center;
   margin-top: 10px;
-  color: #ff0080;
+  color: #FF3B3F;
+  font-family: 'Cabin', sans-serif;
 }
 
 h2 {
   text-align: center;
   margin-top: 10px;
-  color: #FF6700;
+  color: #A9A9A9;
+  font-family: 'Cabin', sans-serif;
 }
 
 p {
-  text-align: center;
+  /*text-align: center;*/
+  font-family: 'Old Standard TT', serif;
+  font-size: 1.1rem;
 }
 
 li {
   list-style: none;
-  padding: 10px;
-  font-family: sans-serif;
+  padding: 0px 40px;
+  font-family: 'Old Standard TT', serif;
 }
 
 a {
   text-decoration: none;
-  font-family: serif;
-  color: black;
+  font-family: 'Old Standard TT', serif;
+  color: #787474;
+  font-size: 1rem;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 hr {
   max-width: 70%;
+  color: #FF3B3F;
 }
 
 #projects {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.show-less {
+  display: none;
+  color: #FF3B3F;
+}
+
+.read-on {
+  color: #FF3B3F;
 }

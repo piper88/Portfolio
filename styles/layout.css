@@ -1,14 +1,18 @@
 header {
   display: flex;
   flex-direction: column;
+  background-color: #CAEBF2;
+  border-radius: 5px;
+  max-width: 98%;
+  margin: 5px auto;
 }
 
-.projects-body {
-  max-width: 60%;
+.clearfix {
+  max-width: 80%;
   margin: auto;
 }
 
-#header-break {
-  max-width: 85%;
-  border-color: #ff0080;
+.main-nav {
+  display: flex;
+  justify-content: center;
 }
