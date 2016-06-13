@@ -23,9 +23,12 @@ projectView.handleFilter = function() {
   $('#project-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      //find the article with the h2 value equal to $(this).val, and fade that article in
-      $('article[data-category="' + $(this).val() + '"]').fadeIn();
-      var targetProject = $('article').find('h2')
+      var targetProject = $('article[data-title="' + $(this).val() + '"]');
+      console.log(targetProject);
+      targetProject.fadeIn();
+    } else {
+      $('article').fadeIn();
+      $('article.template').hide();
     }
   });
 };
@@ -47,6 +50,9 @@ projectView.handleTeasers = function() {
   });
 };
 
-projectView.handleNav();
-projectView.handleTeasers();
-projectView.populateFilter();
+$(document).ready(function() {
+  projectView.handleNav();
+  projectView.handleTeasers();
+  projectView.populateFilter();
+  projectView.handleFilter();
+});

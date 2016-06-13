@@ -3,8 +3,8 @@ header {
   flex-direction: column;
 }
 
-.projects-body {
-  max-width: 60%;
+.clearfix {
+  max-width: 80%;
   margin: auto;
 }
 

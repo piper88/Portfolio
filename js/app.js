@@ -7,6 +7,7 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
+  $('#project-template').find('article').attr('data-title', this.title);
   var source = $('#project-template').html();
   var template = Handlebars.compile(source);
   return template(this);
