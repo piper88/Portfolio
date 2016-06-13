@@ -50,9 +50,14 @@ projectView.handleTeasers = function() {
   });
 };
 
-$(document).ready(function() {
+projectView.renderIndexPage = function() {
+  Project.all.forEach(function(a) {
+    $('#projects').append(a.toHtml());
+  });
   projectView.handleNav();
   projectView.handleTeasers();
   projectView.populateFilter();
   projectView.handleFilter();
-});
+};
+
+Project.fetchAll();
