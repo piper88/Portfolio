@@ -1,10 +1,10 @@
-
-var projects = [];
-
 function Project (opts) {
-  this.title = opts.title;
-  this.body = opts.body;
+  for (keys in opts) {
+    this[keys] = opts[keys];
+  }
 }
+
+Project.all = [];
 
 Project.prototype.toHtml = function() {
   $('#project-template').find('article').attr('data-title', this.title);
@@ -13,13 +13,24 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
-myData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+Project.loadAll = function(dataWePassIn) {
+  dataWePassIn.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  });
+};
 
-projects.forEach(function(project) {
-  $('#projects').append(project.toHtml());
-});
+Project.fetchAll = function() {
+  if (localStorage.mydata) {
+    Project.loadAll(JSON.parse(localStorage.mydata));
+    projectView.renderIndexPage();
+  } else {
+    $.getJSON('data/mydata.json', function(data) {
+      Project.loadAll(data);
+      localStorage.setItem('mydata', JSON.stringify(data));
+      projectView.renderIndexPage();
+    });
+  }
+};
 
 $('.icon-menu').click(function() {
   $('.main-nav ul').toggle();

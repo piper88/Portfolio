@@ -18,15 +18,30 @@ projectView.populateFilter = function() {
     }
   });
 };
+//
+// articleView.handleCategoryFilter = function() {
+//   $('#category-filter').on('change', function() {
+//     if ($(this).val()) {
+//       $('article').hide();
+//       $('article[data-category="' + $(this).val() + '"]').fadeIn();
+//     } else {
+//       $('article').fadeIn();
+//       $('article.template').hide();
+//     }
+//     $('#author-filter').val('');
+//   });
+// };
 
 projectView.handleFilter = function() {
   $('#project-filter').on('change', function() {
     if ($(this).val()) {
+      console.log($(this).val());
       $('article').hide();
-      var targetProject = $('article[data-title="' + $(this).val() + '"]');
-      console.log(targetProject);
-      targetProject.fadeIn();
+      $('article[data-title="' + $(this).val() + '"]').fadeIn();
+      // console.log(targetProject);
+      // targetProject.fadeIn();
     } else {
+      console.log('else');
       $('article').fadeIn();
       $('article.template').hide();
     }
@@ -46,13 +61,19 @@ projectView.handleTeasers = function() {
     e.preventDefault();
     $(this).parent().find($('.projects-body *:nth-of-type(n+2)')).hide();
     $(this).hide();
+    //show the read-on just on this
     $('.read-on').show();
   });
 };
 
-$(document).ready(function() {
+projectView.renderIndexPage = function() {
+  Project.all.forEach(function(a) {
+    $('#projects').append(a.toHtml());
+  });
   projectView.handleNav();
   projectView.handleTeasers();
   projectView.populateFilter();
   projectView.handleFilter();
-});
+};
+
+Project.fetchAll();
