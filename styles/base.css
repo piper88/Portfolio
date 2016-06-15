@@ -58,3 +58,10 @@ hr {
 .read-on {
   color: #FF3B3F;
 }
+
+dt, dd {
+  text-decoration: none;
+  font-family: 'Old Standard TT', serif;
+  color: #787474;
+  font-size: 1rem;
+}
