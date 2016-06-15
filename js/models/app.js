@@ -9,7 +9,6 @@
   Project.all = [];
 
   Project.prototype.toHtml = function() {
-    $('#project-template').find('article').attr('data-title', this.title);
     var source = $('#project-template').html();
     var template = Handlebars.compile(source);
     return template(this);
@@ -52,9 +51,9 @@
   };
 
 
-  $('.icon-menu').click(function() {
-    $('.main-nav ul').toggle();
-  });
+  // $('.icon-menu').click(function() {
+  //   $('.main-nav ul').toggle();
+  // });
   //this attaches the Project object to the module (equivalent to the window)
   module.Project = Project;
 })(window);
