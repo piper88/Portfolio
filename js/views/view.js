@@ -40,8 +40,6 @@
         console.log($(this).val());
         $('article').hide();
         $('article[data-title="' + $(this).val() + '"]').fadeIn();
-        // console.log(targetProject);
-        // targetProject.fadeIn();
       } else {
         console.log('else');
         $('article').fadeIn();
@@ -55,18 +53,17 @@
     $('#projects').on('click', 'a.read-on', function(e) {
       e.preventDefault();
       $(this).parent().find('*').show();
-      $(this).hide();
-      // $(this).parent().$('.show-less').show();
-      // $('.show-less').show();
+      $(this).parent().find('a.read-on').hide();
+      $(this).parent().find('a.show-less').show();
     });
     $('#projects').on('click', 'a.show-less', function(e) {
       e.preventDefault();
       $(this).parent().find($('.projects-body *:nth-of-type(n+2)')).hide();
-      $(this).hide();
-      //show the read-on just on this
-      $('.read-on').show();
+      $(this).parent().find('a.read-on').show();
+      $(this).parent().find('a.show-less').hide();
     });
   };
+
 
   projectView.countWords = function() {
     $('#blog-stats .num-words').text(Project.numWordsAll() / Project.all.length);
