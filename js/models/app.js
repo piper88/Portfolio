@@ -10,12 +10,15 @@
 
   Project.prototype.toHtml = function() {
     var source = $('#project-template').html();
+    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
     var template = Handlebars.compile(source);
     return template(this);
   };
 
   Project.loadAll = function(dataWePassIn) {
-    dataWePassIn.forEach(function(ele) {
+    dataWePassIn.sort(function(a,b) {
+      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+    }).forEach(function(ele) {
       Project.all.push(new Project(ele));
     });
   };

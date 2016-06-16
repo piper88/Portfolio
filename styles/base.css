@@ -16,6 +16,11 @@ h2 {
   font-family: 'Cabin', sans-serif;
 }
 
+h3 {
+  color: #A9A9A9;
+  font-family: 'Cabin', sans-serif;
+}
+
 p {
   /*text-align: center;*/
   font-family: 'Old Standard TT', serif;
