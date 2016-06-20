@@ -12,6 +12,17 @@
   Project.prototype.toHtml = function() {
     var source = $('#project-template').html();
     this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+    if (this.daysAgo > 365) {
+      this.daysAgo = this.daysAgo/365;
+      this.daysAgo = Math.floor(this.daysAgo);
+      if (this.daysAgo === 1) {
+        this.daysAgo = this.daysAgo + ' year ago';
+      } else {
+        this.daysAgo = this.daysAgo + ' years ago';
+      }
+    } else {
+      this.daysAgo = this.daysAgo + ' days ago';
+    };
     var template = Handlebars.compile(source);
     return template(this);
   };
@@ -41,7 +52,6 @@
     return Project.all.map(function(project) {
       return project.body.match(/\b\w{4}\b/g).length;
     }).reduce(function(acc, cur, idx, arr) {
-      console.log(acc + cur);
       return acc + cur;
     });
   };
@@ -54,10 +64,10 @@
     });
   };
 
-
-  // $('.icon-menu').click(function() {
-  //   $('.main-nav ul').toggle();
-  // });
+//handles hamburger menu schtuffs showing up or not
+  $('.icon-menu').click(function() {
+    $('.main-nav ul').toggle();
+  });
   //this attaches the Project object to the module (equivalent to the window)
   module.Project = Project;
 })(window);

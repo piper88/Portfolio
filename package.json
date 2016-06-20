@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "spa for the win!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prungy88/Portfolio.git"
+  },
+  "author": "sarah.debey@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prungy88/Portfolio/issues"
+  },
+  "homepage": "https://github.com/prungy88/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

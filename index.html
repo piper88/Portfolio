@@ -13,7 +13,7 @@
     <script id="project-template" type="text/x-handlebars-template">
       <article class="clearfix" data-title="{{title}}">
         <h2>{{title}}</h2>
-        <h3>Published {{daysAgo}} Days Ago</h3>
+        <h3>Published {{daysAgo}}</h3>
         <section class="projects-body">{{{body}}}
         <a href="#" class="read-on">More &rarr;</a>
         <a href="#" class="show-less">Less &larr;</a>
@@ -29,10 +29,10 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
           <ul>
-            <li class="tab" data-content="projects"><a href="#">Home</a></li>
-            <li class="tab" data-content="about"><a href="#">About Me</a></li>
-            <li class="icon-github"><a href="https://github.com/prungy88">Github</a></li>
-            <li class="icon-facebook"><a href="https://www.facebook.com/sarah.debey.9">Facebook</a></li>
+            <li class="tab" data-content="projects"><a href="/">Home</a></li>
+            <li class="tab" data-content="about"><a href="/aboutme">About Me</a></li>
+            <li><a href="https://github.com/prungy88"><span class="icon-github">Github</span></a></li>
+            <li><a href="https://www.facebook.com/sarah.debey.9"><span class="icon-facebook">Facebook</span></a></li>
           </ul>
       </nav>
     </header>
@@ -64,10 +64,17 @@
         </section>
 
     </main>
+    <script src="vendor/scripts/page.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="data/mydata.json"></script>
+    <!-- Model Files -->
     <script src="js/models/app.js"></script>
+    <!-- View Files -->
     <script src="js/views/view.js"></script>
+    <!-- Controller Files  -->
+    <script src="js/controllers/aboutController.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/routes.js"></script>
   </body>
 </html>

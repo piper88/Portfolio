@@ -1,19 +1,18 @@
   var projectView = {};
 
 //Loads main page first, then handles user clicks on different nav tabs to toggle content
-  projectView.handleNav = function() {
-    $('.main-nav').on('click', '.tab', function() {
-      $('.content-to-toggle').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-    $('.main-nav .tab:first').click();
-  };
+  // projectView.handleNav = function() {
+  //   $('.main-nav').on('click', '.tab', function() {
+  //     $('.content-to-toggle').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  //   $('.main-nav .tab:first').click();
+  // };
 //Method to populate filter
   projectView.populateFilter = function() {
     $('article').each(function() {
       if (!$(this).hasClass('template')) {
         var val = $(this).find('h2').text();
-        console.log(val);
         var optionTag = '<option value="' + val + '">' + val + '</option>';
         $('#project-filter').append(optionTag);
       }
@@ -23,11 +22,9 @@
   projectView.handleFilter = function() {
     $('#project-filter').on('change', function() {
       if ($(this).val()) {
-        console.log($(this).val());
         $('article').hide();
         $('article[data-title="' + $(this).val() + '"]').fadeIn();
       } else {
-        console.log('else');
         $('article').fadeIn();
         $('article.template').hide();
       }
@@ -67,7 +64,7 @@
     Project.all.forEach(function(a) {
       $('#projects').append(a.toHtml());
     });
-    projectView.handleNav();
+    // projectView.handleNav();
     projectView.handleTeasers();
     projectView.populateFilter();
     projectView.handleFilter();

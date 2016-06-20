@@ -4,6 +4,10 @@
   list-style: none;
 }
 
+.content-to-toggle {
+  display: none;
+}
+
 @media only screen and (min-width: 640px) {
   li {
     display: flex;
