@@ -3,10 +3,11 @@
   repos.allRepos = [];
 
   repos.requestRepos = function(next) {
-    $.get('/github.com/users/prungy88/repos' + '?per_page=10')
+    $.get('/github/users/prungy88/repos' + '?per_page=10')
+
     .done(function(data) {
       repos.allRepos = data;
-    }).done(callback);
+    }).done(next);
   };
 
   repos.withAttribute = function(attr) {
