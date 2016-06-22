@@ -3,15 +3,10 @@
   repos.allRepos = [];
 
   repos.requestRepos = function(next) {
-    $.ajax({
-      url: 'https://api.github.com/users/prungy88/repos',
-      type: 'GET',
-      headers: {'Authorization': 'token ' + githubToken},
-      success: function(data) {
-        repos.allRepos = data;
-        next();
-      }
-    });
+    $.get('/github.com/users/prungy88/repos' + '?per_page=10')
+    .done(function(data) {
+      repos.allRepos = data;
+    }).done(callback);
   };
 
   repos.withAttribute = function(attr) {
