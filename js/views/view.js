@@ -8,6 +8,25 @@
   //   });
   //   $('.main-nav .tab:first').click();
   // };
+
+  var renderArticleInfo = function(article, scriptTemplateId) {
+    var source = $('#project-template').html();
+    article.daysAgo = parseInt((new Date() - new Date(article.publishedOn))/60/60/24/1000);
+    if (article.daysAgo > 365) {
+      article.daysAgo = article.daysAgo/365;
+      article.daysAgo = Math.floor(article.daysAgo);
+      if (article.daysAgo === 1) {
+        article.daysAgo = article.daysAgo + ' year ago';
+      } else {
+        article.daysAgo = article.daysAgo + ' years ago';
+      }
+    } else {
+      article.daysAgo = article.daysAgo + ' days ago';
+    };
+    var template = Handlebars.compile(source);
+    return template(article);
+  };
+
 //Method to populate filter
   projectView.populateFilter = function() {
     $('article').each(function() {
@@ -62,7 +81,7 @@
 //Method to actually render the page, calls all necessary methods
   projectView.renderIndexPage = function() {
     Project.all.forEach(function(a) {
-      $('#projects').append(a.toHtml());
+      $('#projects').append(renderArticleInfo(a, '#project-template'));
     });
     // projectView.handleNav();
     projectView.handleTeasers();

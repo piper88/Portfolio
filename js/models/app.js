@@ -8,24 +8,6 @@
 
   Project.all = [];
 
-//Does handlebar stuff
-  Project.prototype.toHtml = function() {
-    var source = $('#project-template').html();
-    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-    if (this.daysAgo > 365) {
-      this.daysAgo = this.daysAgo/365;
-      this.daysAgo = Math.floor(this.daysAgo);
-      if (this.daysAgo === 1) {
-        this.daysAgo = this.daysAgo + ' year ago';
-      } else {
-        this.daysAgo = this.daysAgo + ' years ago';
-      }
-    } else {
-      this.daysAgo = this.daysAgo + ' days ago';
-    };
-    var template = Handlebars.compile(source);
-    return template(this);
-  };
 //Sorts projects by published date, then instantiates projects and pushes to project.all array
   Project.loadAll = function(dataWePassIn) {
     dataWePassIn.sort(function(a,b) {

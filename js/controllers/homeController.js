@@ -2,7 +2,7 @@
   var homeController = {};
 
   homeController.index = function() {
-    $('content-to-toggle').hide();
+    $('.content-to-toggle').hide();
     $('#projects').fadeIn();
   };
 
