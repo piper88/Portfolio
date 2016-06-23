@@ -67,17 +67,17 @@
   };
 
 //Method to render number of 4 letter words
-  projectView.countWords = function() {
-    $('#blog-stats .num-words').text(Project.numWordsAll() / Project.all.length);
-  };
+  // projectView.countWords = function() {
+  //   $('#blog-stats .num-words').text(Project.numWordsAll() / Project.all.length);
+  // };
 //Method to render number of 5 letter words
-  projectView.countFive = function() {
-    $('#blog-stats .num-five').text(Project.numFiveWords());
-  };
+  // projectView.countFive = function() {
+  //   $('#blog-stats .num-five').text(Project.numFiveWords());
+  // };
 //Method to render number of projects
-  projectView.countProjects = function() {
-    $('#blog-stats .num-projects').text(Project.all.length);
-  };
+  // projectView.countProjects = function() {
+  //   $('#blog-stats .num-projects').text(Project.all.length);
+  // };
 //Method to actually render the page, calls all necessary methods
   projectView.renderIndexPage = function() {
     Project.all.forEach(function(a) {
@@ -87,9 +87,9 @@
     projectView.handleTeasers();
     projectView.populateFilter();
     projectView.handleFilter();
-    projectView.countWords();
-    projectView.countProjects();
-    projectView.countFive();
+    // projectView.countWords();
+    // projectView.countProjects();
+    // projectView.countFive();
   };
 //Runs Fetch all, which gets data from JSON or local storage, which then runs renderIndexPage, which kicks the whole process off....or something ;)
   Project.fetchAll();

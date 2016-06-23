@@ -5,12 +5,12 @@
     <title>My Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/test.css">
+    <!-- <link rel="stylesheet" href="styles/test.css"> -->
     <link href='https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/style.css">
     <script id="project-template" type="text/x-handlebars-template">
       <article class="clearfix" data-title="{{title}}">
         <h2>{{title}}</h2>
@@ -27,7 +27,6 @@
       <article class="clearfix">
         <dr>
           <dt><a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a></dt>
-          <dt><strong>Description:</strong> {{description}}</dt>
           <dt><strong>Primary Language:</strong> {{language}}</dt>
           <dt><strong>Created:</strong> {{created_at}}</dt>
           <dt><strong>Last updated:</strong> {{updated_at}}</dt>
@@ -42,20 +41,20 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
           <ul>
-            <li class="tab" data-content="projects"><a href="/">Home</a></li>
-            <li class="tab" data-content="about"><a href="/aboutme">About Me</a></li>
+            <li class="tab" data-content="projects"><a href="/" class="icon-home">Home</a></li>
+            <li class="tab" data-content="about"><a href="/aboutme" class="icon-leaf">About Me</a></li>
             <li><a href="https://github.com/prungy88"><span class="icon-github">Github</span></a></li>
-            <li><a href="https://www.facebook.com/sarah.debey.9"><span class="icon-facebook">Facebook</span></a></li>
+            <li><a href="https://www.linkedin.com/in/sarahdebey"><span class="icon-linkedin">LinkedIn</span></a></li>
           </ul>
       </nav>
     </header>
       <main>
 
-        <section class="clearfix" id="blog-stats" class="content-to-toggle">
+        <!-- <section class="clearfix" id="blog-stats" class="content-to-toggle">
           <dt>Number of 4 letter words:</dt><dd class="num-words"></dd>
           <dt>Number of 5 letter words:</dt><dd class="num-five"></dd>
           <dt>Number of Projects:</dt><dd class="num-projects"></dd>
-        </section>
+        </section> -->
 
         <section id="projects" class="content-to-toggle">
           <div>

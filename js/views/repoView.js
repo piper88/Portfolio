@@ -8,9 +8,7 @@
 
   repoView.renderRepos = function() {
     $('#about dr').empty().append(
-      repos.withAttribute('description').sort(function(a,b) {
-        return (new Date(b.updated_at)) - (new Date(a.updated_at));
-      })
+      repos.withAttribute('fork')
     .map(repoCompiler)
   );
   };
