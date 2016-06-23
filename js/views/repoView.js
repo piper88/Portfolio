@@ -7,12 +7,8 @@
   };
 
   repoView.renderRepos = function() {
-    console.log(repos.allRepos);
     $('#about dr').empty().append(
-      repos.withAttribute('description').sort(function(a,b) {
-        console.log(a.updated_at);
-        return (new Date(b.updated_at)) - (new Date(a.updated_at));
-      })
+      repos.withAttribute('fork')
     .map(repoCompiler)
   );
   };
