@@ -16,3 +16,14 @@ header {
   display: flex;
   justify-content: center;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > p {
+  color: #FF3B3F;
+  margin: 0 auto 10px;
+  font-size: .9rem;
+}

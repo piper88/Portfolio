@@ -1,3 +1,5 @@
+
+
   var projectView = {};
 
 //Loads main page first, then handles user clicks on different nav tabs to toggle content

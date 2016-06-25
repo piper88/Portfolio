@@ -9,6 +9,16 @@ h1 {
   font-family: 'Cabin', sans-serif;
 }
 
+/*#F4F4F9
+#B8DBD9
+#586F7C
+#2F4550
+#000000
+#F85A3E*/
+
+
+
+
 h2 {
   text-align: center;
   margin-top: 10px;
@@ -38,10 +48,20 @@ a {
   font-family: 'Old Standard TT', serif;
   color: #787474;
   font-size: 1rem;
+  /*border-style: 1px black thin;*/
 }
 
+/*ul {
+  position: absolute;
+}
+
+ul > div {
+  position: relative;
+}*/
+
+
 a:hover {
-  font-weight: bold;
+  color: #FF3B3F;
 }
 
 hr {
